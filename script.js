@@ -395,26 +395,50 @@ function initSmoothScrolling() {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
             
-            if (targetElement) {
-                let offsetTop;
+            console.log('Attempting to scroll to:', targetId);
+            
+            // Wait a moment to ensure DOM is fully loaded
+            setTimeout(() => {
+                const targetElement = document.getElementById(targetId);
+                console.log('Target element found:', targetElement);
                 
-                // Special offset for payment plan cards
-                if (targetId === 'membership-plan' || targetId === 'support-plan') {
-                    offsetTop = targetElement.offsetTop - 150; // More space for plan cards
-                    console.log('Scrolling to plan:', targetId, 'at position:', offsetTop);
+                if (targetElement) {
+                    let offsetTop;
+                    
+                    // Special offset for payment plan cards
+                    if (targetId === 'membership-plan' || targetId === 'support-plan') {
+                        offsetTop = targetElement.offsetTop - 150; // More space for plan cards
+                        console.log('Scrolling to plan:', targetId, 'element offsetTop:', targetElement.offsetTop, 'final position:', offsetTop);
+                    } else {
+                        offsetTop = targetElement.offsetTop - 80; // Default for sections
+                        console.log('Scrolling to section:', targetId, 'element offsetTop:', targetElement.offsetTop, 'final position:', offsetTop);
+                    }
+                    
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
                 } else {
-                    offsetTop = targetElement.offsetTop - 80; // Default for sections
+                    console.error('Target element not found:', targetId);
+                    // Fallback: try to find the element by class name
+                    let fallbackElement = null;
+                    if (targetId === 'membership-plan') {
+                        fallbackElement = document.querySelector('.membership-plan');
+                    } else if (targetId === 'support-plan') {
+                        fallbackElement = document.querySelector('.support-plan');
+                    }
+                    
+                    if (fallbackElement) {
+                        console.log('Using fallback element:', fallbackElement);
+                        const offsetTop = fallbackElement.offsetTop - 150;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
-                
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            } else {
-                console.log('Target element not found:', targetId);
-            }
+            }, 100);
         });
     });
 }
