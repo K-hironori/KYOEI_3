@@ -402,7 +402,8 @@ function initSmoothScrolling() {
                 
                 // Special offset for payment plan cards
                 if (targetId === 'membership-plan' || targetId === 'support-plan') {
-                    offsetTop = targetElement.offsetTop - 120; // More space for plan cards
+                    offsetTop = targetElement.offsetTop - 150; // More space for plan cards
+                    console.log('Scrolling to plan:', targetId, 'at position:', offsetTop);
                 } else {
                     offsetTop = targetElement.offsetTop - 80; // Default for sections
                 }
@@ -411,6 +412,8 @@ function initSmoothScrolling() {
                     top: offsetTop,
                     behavior: 'smooth'
                 });
+            } else {
+                console.log('Target element not found:', targetId);
             }
         });
     });
