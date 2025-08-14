@@ -14,36 +14,85 @@ document.addEventListener('DOMContentLoaded', function() {
 // Direct scroll functions for hero buttons
 function scrollToMembershipPlan(event) {
     event.preventDefault();
-    console.log('Scrolling to membership plan');
+    console.log('年会費ボタンがクリックされました');
     
-    const target = document.getElementById('membership-plan');
-    if (target) {
-        const offsetTop = target.offsetTop - 120;
-        console.log('Target found, scrolling to:', offsetTop);
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-        });
-    } else {
-        console.error('Membership plan element not found');
-    }
+    // より確実にスクロールするために複数の方法を試す
+    setTimeout(() => {
+        const target = document.getElementById('membership-plan');
+        console.log('membership-plan要素:', target);
+        
+        if (target) {
+            // 要素の位置を計算
+            const rect = target.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const targetTop = rect.top + scrollTop - 100;
+            
+            console.log('スクロール先の位置:', targetTop);
+            
+            // スクロール実行
+            window.scrollTo({
+                top: targetTop,
+                behavior: 'smooth'
+            });
+        } else {
+            // フォールバック: クラス名で検索
+            const fallback = document.querySelector('.membership-plan');
+            console.log('フォールバック要素:', fallback);
+            
+            if (fallback) {
+                const rect = fallback.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetTop = rect.top + scrollTop - 100;
+                
+                window.scrollTo({
+                    top: targetTop,
+                    behavior: 'smooth'
+                });
+            } else {
+                console.error('年会費プラン要素が見つかりませんでした');
+            }
+        }
+    }, 100);
 }
 
 function scrollToSupportPlan(event) {
     event.preventDefault();
-    console.log('Scrolling to support plan');
+    console.log('応援会費ボタンがクリックされました');
     
-    const target = document.getElementById('support-plan');
-    if (target) {
-        const offsetTop = target.offsetTop - 120;
-        console.log('Target found, scrolling to:', offsetTop);
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-        });
-    } else {
-        console.error('Support plan element not found');
-    }
+    setTimeout(() => {
+        const target = document.getElementById('support-plan');
+        console.log('support-plan要素:', target);
+        
+        if (target) {
+            const rect = target.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const targetTop = rect.top + scrollTop - 100;
+            
+            console.log('スクロール先の位置:', targetTop);
+            
+            window.scrollTo({
+                top: targetTop,
+                behavior: 'smooth'
+            });
+        } else {
+            // フォールバック: クラス名で検索
+            const fallback = document.querySelector('.support-plan');
+            console.log('フォールバック要素:', fallback);
+            
+            if (fallback) {
+                const rect = fallback.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetTop = rect.top + scrollTop - 100;
+                
+                window.scrollTo({
+                    top: targetTop,
+                    behavior: 'smooth'
+                });
+            } else {
+                console.error('応援会費プラン要素が見つかりませんでした');
+            }
+        }
+    }, 100);
 }
 
 // Scroll Animations with Intersection Observer
