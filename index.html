@@ -40,8 +40,8 @@
                 <div class="fee-note">※ 銀行振込でのお支払いとなります</div>
             </div>
             <div class="hero-buttons">
-                <button class="btn btn-primary btn-large" onclick="var target = document.getElementById('membership-plan'); if (target) { var pos = target.offsetTop - 120; window.scrollTo({top: pos, behavior: 'smooth'}); }">年会費を納入する</button>
-                <button class="btn btn-secondary btn-large" onclick="var target = document.getElementById('support-plan'); if (target) { var pos = target.offsetTop - 120; window.scrollTo({top: pos, behavior: 'smooth'}); }">応援会費で支援する</button>
+                <button class="btn btn-primary btn-large" onclick="scrollToMembership()">年会費を納入する</button>
+                <button class="btn btn-secondary btn-large" onclick="scrollToSupport()">応援会費で支援する</button>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -419,5 +419,30 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function scrollToMembership() {
+            console.log('年会費ボタンクリック');
+            var target = document.getElementById('membership-plan');
+            console.log('要素:', target);
+            if (target) {
+                target.scrollIntoView({behavior: 'smooth', block: 'center'});
+                setTimeout(function() {
+                    window.scrollBy(0, -100);
+                }, 500);
+            }
+        }
+        
+        function scrollToSupport() {
+            console.log('応援会費ボタンクリック');
+            var target = document.getElementById('support-plan');
+            console.log('要素:', target);
+            if (target) {
+                target.scrollIntoView({behavior: 'smooth', block: 'center'});
+                setTimeout(function() {
+                    window.scrollBy(0, -100);
+                }, 500);
+            }
+        }
+    </script>
 </body>
 </html>
