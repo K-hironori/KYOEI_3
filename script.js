@@ -398,7 +398,14 @@ function initSmoothScrolling() {
             const targetElement = document.getElementById(targetId);
             
             if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
+                let offsetTop;
+                
+                // Special offset for payment plan cards
+                if (targetId === 'membership-plan' || targetId === 'support-plan') {
+                    offsetTop = targetElement.offsetTop - 120; // More space for plan cards
+                } else {
+                    offsetTop = targetElement.offsetTop - 80; // Default for sections
+                }
                 
                 window.scrollTo({
                     top: offsetTop,
