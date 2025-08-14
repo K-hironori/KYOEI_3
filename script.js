@@ -11,6 +11,41 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileNavigation();
 });
 
+// Direct scroll functions for hero buttons
+function scrollToMembershipPlan(event) {
+    event.preventDefault();
+    console.log('Scrolling to membership plan');
+    
+    const target = document.getElementById('membership-plan');
+    if (target) {
+        const offsetTop = target.offsetTop - 120;
+        console.log('Target found, scrolling to:', offsetTop);
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    } else {
+        console.error('Membership plan element not found');
+    }
+}
+
+function scrollToSupportPlan(event) {
+    event.preventDefault();
+    console.log('Scrolling to support plan');
+    
+    const target = document.getElementById('support-plan');
+    if (target) {
+        const offsetTop = target.offsetTop - 120;
+        console.log('Target found, scrolling to:', offsetTop);
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    } else {
+        console.error('Support plan element not found');
+    }
+}
+
 // Scroll Animations with Intersection Observer
 function initScrollAnimations() {
     const observerOptions = {
