@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>享栄高校硬式野球部OB・OG会 | 年会費納入のお手続き</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">享栄高校硬式野球部OB・OG会</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#purpose">趣旨説明</a></li>
+                <li><a href="#usage">会費の使い道</a></li>
+                <li><a href="#payment" class="nav-cta">年会費納入</a></li>
+                <li><a href="#faq">よくあるご質問</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-main">年に一度の会費が、<br>後輩たちの甲子園への道を創る。</span>
+                <span class="hero-sub">OB・OG会の組織的な支援で、常勝・享栄の未来を共に。</span>
+            </h1>
+            <div class="hero-fee-info">
+                <div class="fee-amount">年会費：5,000円</div>
+                <div class="fee-sub-amount">応援会費：一口1,000円から</div>
+                <div class="fee-note">※ 銀行振込でのお支払いとなります</div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#payment" class="btn btn-primary btn-large">年会費を納入する</a>
+                <a href="#payment" class="btn btn-secondary btn-large">応援会費で支援する</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <div class="arrow-down">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="purpose" class="purpose">
+        <div class="container">
+            <h2 class="section-title">なぜ今、私たちOB・OG会の「組織的な支援」が必要なのか</h2>
+            <div class="purpose-content">
+                <div class="purpose-explanation">
+                    <div class="purpose-text">
+                        <h3>強豪ひしめく愛知を勝ち抜くために</h3>
+                        <p>現在の高校野球界は、かつてない激戦時代を迎えています。強豪ひしめく愛知県で勝ち抜き、甲子園出場を果たすためには、選手の育成環境（栄養、トレーニング、遠征など）の継続的な向上が不可欠です。</p>
+                        
+                        <p><strong>その場限りではない、皆様からの安定した年会費が、計画的なチーム強化を可能にし、現役選手にとって何よりの力となります。</strong></p>
+                        
+                        <div class="purpose-points">
+                            <div class="point-item">
+                                <div class="point-icon">📊</div>
+                                <div class="point-text">
+                                    <h4>計画的な強化</h4>
+                                    <p>年間を通じた安定した予算で、継続的な選手育成が可能</p>
+                                </div>
+                            </div>
+                            <div class="point-item">
+                                <div class="point-icon">🤝</div>
+                                <div class="point-text">
+                                    <h4>組織的な支援</h4>
+                                    <p>個人の寄付に頼らない、OB・OG会としての組織的サポート</p>
+                                </div>
+                            </div>
+                            <div class="point-item">
+                                <div class="point-icon">🏆</div>
+                                <div class="point-text">
+                                    <h4>長期的なビジョン</h4>
+                                    <p>常勝軍団復活へ向けた、戦略的な投資と環境整備</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="usage" class="usage">
+        <div class="container">
+            <h2 class="section-title">会費の使い道 〜皆様の会費が、こう活かされます〜</h2>
+            <div class="usage-subtitle">資金使途の徹底した透明性で、信頼いただける運営を</div>
+            
+            <div class="usage-content">
+                <div class="usage-chart-section">
+                    <h3>年会費の内訳（5,000円）</h3>
+                    <div class="usage-chart">
+                        <div class="chart-container">
+                            <canvas id="usageChart"></canvas>
+                        </div>
+                        <div class="usage-breakdown">
+                            <div class="usage-item">
+                                <div class="usage-color" style="background-color: #2c5aa0;"></div>
+                                <div class="usage-info">
+                                    <div class="usage-title">選手の育成・強化費</div>
+                                    <div class="usage-percent">60%</div>
+                                    <div class="usage-amount">3,000円</div>
+                                </div>
+                            </div>
+                            <div class="usage-item">
+                                <div class="usage-color" style="background-color: #4a90a4;"></div>
+                                <div class="usage-info">
+                                    <div class="usage-title">練習環境の維持・向上費</div>
+                                    <div class="usage-percent">25%</div>
+                                    <div class="usage-amount">1,250円</div>
+                                </div>
+                            </div>
+                            <div class="usage-item">
+                                <div class="usage-color" style="background-color: #81c3d7;"></div>
+                                <div class="usage-info">
+                                    <div class="usage-title">OB・OG会 運営費</div>
+                                    <div class="usage-percent">15%</div>
+                                    <div class="usage-amount">750円</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="usage-details">
+                    <div class="detail-section">
+                        <div class="detail-icon">💪</div>
+                        <h3>選手の育成・強化費（60%）</h3>
+                        <ul>
+                            <li>フィジカルサポート（プロテイン代、専門トレーナー費用など）</li>
+                            <li>強豪校との実戦経験を積むための遠征・合宿費用の補助</li>
+                            <li>メンタルケア、コンディショニングサポート</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <div class="detail-icon">⚾</div>
+                        <h3>練習環境の維持・向上費（25%）</h3>
+                        <ul>
+                            <li>グラウンド整備、打撃マシンなどの用具メンテナンス・購入費</li>
+                            <li>屋内練習場の電気代、空調代などの維持費</li>
+                            <li>安全対策、救急用具の整備</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <div class="detail-icon">📢</div>
+                        <h3>OB・OG会 運営費（15%）</h3>
+                        <ul>
+                            <li>会報誌の発行・郵送費</li>
+                            <li>Webサイト・連絡網の維持管理費</li>
+                            <li>OB・OG会イベントの開催費用</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="payment" class="payment">
+        <div class="container">
+            <h2 class="section-title">あなたの想いに合わせて、選べる2つの支援プラン</h2>
+            <div class="payment-subtitle">後輩たちの夢を応援する、あなたらしい方法をお選びください</div>
+            
+            <div class="payment-content">
+                <div class="payment-plans">
+                    <!-- 年会費プラン -->
+                    <div class="payment-option membership-plan">
+                        <div class="plan-header">
+                            <div class="plan-icon">🤝</div>
+                            <h3 class="plan-title">年会費で、組織を支える</h3>
+                            <div class="plan-price">5,000円</div>
+                        </div>
+                        
+                        <div class="plan-description">
+                            <p class="plan-main-copy">
+                                OB・OG会の基盤となる、会員としての最も基本的な支援です。
+                            </p>
+                            <p class="plan-detail-copy">
+                                皆様の年会費は、享栄野球部の計画的な強化活動を支える重要な財源となります。安定した組織運営により、選手たちが甲子園という夢に向かって集中できる環境を創り出します。
+                            </p>
+                        </div>
+                        
+                        <div class="plan-benefits">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <span>計画的なチーム強化への投資</span>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏢</div>
+                                <span>OB・OG会の安定運営</span>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📰</div>
+                                <span>会報誌・限定情報の提供</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-large plan-cta" onclick="scrollToBankInfo('membership')">
+                            年会費（5,000円）を振り込む
+                        </button>
+                    </div>
+                    
+                    <!-- 応援会費プラン -->
+                    <div class="payment-option support-plan">
+                        <div class="plan-header">
+                            <div class="plan-icon">💪</div>
+                            <h3 class="plan-title">応援会費で、選手に直接エールを送る</h3>
+                            <div class="plan-price">一口 1,000円から</div>
+                        </div>
+                        
+                        <div class="plan-description">
+                            <p class="plan-main-copy">
+                                「年会費は少し厳しいけれど、後輩のために何かしたい」<br>
+                                「年会費に加えて、選手たちをさらに後押ししたい」
+                            </p>
+                            <p class="plan-detail-copy">
+                                <strong>皆様からの一口が、選手のプロテイン1杯、テーピング1本に変わります。</strong><br>
+                                その小さなエールが、夏の大会での大きな一勝に繋がります。金額の大小に関わらず、OB・OGの皆様の温かい想いが、現役選手たちの何よりの励みとなります。
+                            </p>
+                        </div>
+                        
+                        <div class="plan-benefits">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🥤</div>
+                                <span>選手のプロテイン・栄養補助食品</span>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🩹</div>
+                                <span>テーピング・ケア用品</span>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">⚾</div>
+                                <span>練習用具・消耗品</span>
+                            </div>
+                        </div>
+                        
+                        <div class="support-amounts">
+                            <div class="amount-examples">
+                                <div class="amount-item">1,000円 = プロテイン1杯分</div>
+                                <div class="amount-item">3,000円 = テーピング1週間分</div>
+                                <div class="amount-item">5,000円 = 練習球1ダース分</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-accent btn-large plan-cta" onclick="scrollToBankInfo('support')">
+                            応援会費（一口1,000円〜）で支援する
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 共通振込先情報 -->
+                <div class="bank-transfer-section" id="bankTransferSection">
+                    <div class="transfer-header">
+                        <div class="transfer-icon">🏦</div>
+                        <h3>振込先口座情報</h3>
+                        <p class="transfer-subtitle">以下の口座へお振り込みください。恐れ入りますが、振込手数料はご負担願います。</p>
+                    </div>
+                    
+                    <div class="bank-details-card">
+                        <h4>振込先口座</h4>
+                        <table class="bank-table">
+                            <tr>
+                                <td>金融機関</td>
+                                <td>三菱UFJ銀行</td>
+                            </tr>
+                            <tr>
+                                <td>支店名</td>
+                                <td>名古屋駅前支店</td>
+                            </tr>
+                            <tr>
+                                <td>口座種別</td>
+                                <td>普通預金</td>
+                            </tr>
+                            <tr>
+                                <td>口座番号</td>
+                                <td>1234567</td>
+                            </tr>
+                            <tr>
+                                <td>口座名義</td>
+                                <td>享栄高校硬式野球部OB・OG会</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="transfer-instructions">
+                        <h4>【重要】お振り込み時の注意事項</h4>
+                        <div class="instruction-list">
+                            <div class="instruction-item">
+                                <div class="instruction-icon">📝</div>
+                                <div class="instruction-content">
+                                    <strong>振込名義人名の後に種別を記載</strong><br>
+                                    年会費の場合：「お名前 年会費」<br>
+                                    応援会費の場合：「お名前 応援会費◯◯◯◯」（金額も併記）
+                                </div>
+                            </div>
+                            <div class="instruction-item">
+                                <div class="instruction-icon">📞</div>
+                                <div class="instruction-content">
+                                    <strong>振込完了後のご連絡</strong><br>
+                                    事務局（052-841-8151）まで納入のご連絡をお願いいたします
+                                </div>
+                            </div>
+                            <div class="instruction-item">
+                                <div class="instruction-icon">📋</div>
+                                <div class="instruction-content">
+                                    <strong>領収書について</strong><br>
+                                    必要な方は、お振り込み時または事後にお申し出ください
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-security">
+                    <div class="security-item">
+                        <div class="security-icon">🏦</div>
+                        <div class="security-text">
+                            <h4>安全な銀行振込</h4>
+                            <p>金融機関を通じた確実なお支払い方法です</p>
+                        </div>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">📞</div>
+                        <div class="security-text">
+                            <h4>入金確認</h4>
+                            <p>お振り込み後、事務局にてご連絡をお待ちしております</p>
+                        </div>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">📋</div>
+                        <div class="security-text">
+                            <h4>領収書発行</h4>
+                            <p>必要に応じて、正式な領収書を発行いたします</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">よくあるご質問</h2>
+            <div class="faq-subtitle">お手続きに関する疑問や不安を解消いたします</div>
+            
+            <div class="faq-content">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>年会費と寄付はどう違うのですか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>年会費は、OB・OG会の組織的な運営と、現役選手への継続的な支援を目的とした年間の会費です。寄付は任意のご支援ですが、年会費は会員としての年間の会費として、安定した活動基盤を支えるものです。年会費をお納めいただくことで、会員特典もご利用いただけます。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>毎年振り込む必要がありますか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、年会費・応援会費ともに毎年お振り込みをお願いしております。毎年3月頃に事務局より納入のご案内をお送りいたしますので、4月末日までにお振り込みください。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>領収書は発行されますか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、ご希望の方には正式な領収書を発行いたします。お振り込み確認後、郵送にてお送りいたします。領収書が必要な方は、お振り込み時またはお振り込み後に事務局までお申し出ください。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>住所や連絡先が変わった場合はどうすればいいですか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ご住所やお電話番号、メールアドレスの変更は、事務局までご連絡ください。会報誌の郵送先や、各種ご案内が確実にお届けできるよう、変更があった際は速やかにお知らせいただけますようお願いいたします。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>年会費は税務上の寄付金控除の対象になりますか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>申し訳ございませんが、年会費は寄付金控除の対象とはなりません。これは会員としての年会費であり、寄付とは性質が異なるためです。ただし、年会費以外に追加でご寄付をいただく場合は、別途ご相談ください。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>振り込み名義人を変更したい場合はどうすればいいですか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>振り込み名義人を変更される場合は、事前に事務局までご連絡ください。ご家族名義での振り込みや、会社名義での振り込みも可能です。振り込み後に誰からの納入かを確認できるよう、事前にお知らせください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>享栄高校硬式野球部OB・OG会</h3>
+                    <p>時代を超えて受け継がれる、青い誇り。</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>お問い合わせ</h4>
+                        <p>享栄高等学校内<br>硬式野球部OB・OG会事務局</p>
+                        <p>TEL: 052-841-8151</p>
+                        <p>Email: baseball-obog@kyoei.ac.jp</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>リンク</h4>
+                        <ul>
+                            <li><a href="#">享栄高等学校</a></li>
+                            <li><a href="#">野球部公式サイト</a></li>
+                            <li><a href="#">OB・OG会について</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 享栄高校硬式野球部OB・OG会. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
