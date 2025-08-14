@@ -74,9 +74,11 @@ section {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     position: relative;
+    line-height: 1.3;
+    word-break: keep-all;
 }
 
 .section-title::after {
@@ -543,8 +545,16 @@ section {
 
 .usage-subtitle {
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: var(--koei-blue-light);
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.usage-description {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-gray);
     margin-bottom: 60px;
 }
 
@@ -2157,6 +2167,16 @@ section {
         overflow-wrap: break-word;
     }
     
+    .usage-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .usage-description {
+        font-size: 0.85rem;
+        margin-bottom: 40px;
+    }
+    
     .payment-subtitle {
         font-size: 1rem;
         margin-bottom: 30px;
@@ -2244,6 +2264,16 @@ section {
         word-break: keep-all;
         overflow-wrap: break-word;
         padding: 0 5px;
+    }
+    
+    .usage-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+    
+    .usage-description {
+        font-size: 0.8rem;
+        margin-bottom: 30px;
     }
     
     .payment-subtitle {
