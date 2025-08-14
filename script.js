@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initNavigation();
     initPaymentForm();
-    initUsageChart();
+    // initUsageChart(); // Removed chart functionality
     initFAQAccordion();
     initBankTransferAccordion();
     initSmoothScrolling();
@@ -308,55 +308,7 @@ function proceedToCustomPayment(type) {
     }
 }
 
-// Usage Chart with updated data for membership fee
-function initUsageChart() {
-    const canvas = document.getElementById('usageChart');
-    if (!canvas) return;
-
-    // Set canvas size properly
-    canvas.width = 300;
-    canvas.height = 300;
-
-    const ctx = canvas.getContext('2d');
-    const data = [
-        { label: '選手の育成・強化費', value: 60, color: '#2c5aa0' },
-        { label: '練習環境の維持・向上費', value: 25, color: '#4a90a4' },
-        { label: 'OB・OG会 運営費', value: 15, color: '#81c3d7' }
-    ];
-
-    drawPieChart(ctx, data, 150, 150, 120);
-}
-
-function drawPieChart(ctx, data, centerX, centerY, radius) {
-    let currentAngle = -Math.PI / 2;
-    const total = data.reduce((sum, item) => sum + item.value, 0);
-
-    ctx.clearRect(0, 0, 300, 300);
-
-    data.forEach(item => {
-        const sliceAngle = (item.value / total) * 2 * Math.PI;
-
-        // Draw slice
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
-        ctx.lineTo(centerX, centerY);
-        ctx.fillStyle = item.color;
-        ctx.fill();
-
-        // Add subtle stroke
-        ctx.strokeStyle = '#fff';
-        ctx.lineWidth = 2;
-        ctx.stroke();
-
-        currentAngle += sliceAngle;
-    });
-
-    // Add center circle for donut effect
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius * 0.4, 0, 2 * Math.PI);
-    ctx.fillStyle = '#fff';
-    ctx.fill();
-}
+// Usage Chart functionality removed - chart and percentages no longer needed
 
 // FAQ Accordion functionality
 function initFAQAccordion() {
