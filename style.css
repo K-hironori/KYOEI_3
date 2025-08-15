@@ -1796,6 +1796,19 @@ section {
         padding: 0 15px;
     }
     
+    /* Mobile menu styles for script.js functionality */
+    .nav-menu.mobile-open {
+        left: 0 !important;
+    }
+    
+    .nav-menu.mobile-open li {
+        margin: 20px 0;
+    }
+    
+    .nav-menu.mobile-open a {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
     
     section {
         padding: 60px 0;
