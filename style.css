@@ -1800,6 +1800,13 @@ section {
         display: none;
     }
     
+    .nav-logo .logo-text {
+        font-size: 1rem;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: unset;
+    }
+    
     section {
         padding: 60px 0;
     }
