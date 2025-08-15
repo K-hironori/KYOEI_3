@@ -295,7 +295,14 @@
                                 <div class="instruction-icon">📋</div>
                                 <div class="instruction-content">
                                     <strong>領収書について</strong><br>
-                                    必要な方は、お振り込み時または事後にお申し出ください
+                                    領収書が必要な方は、公式LINEのトーク画面で以下のキーワードをコピーして送信してください。<br>
+                                    <div style="display: inline-flex; align-items: center; gap: 10px; margin-top: 8px;">
+                                        <span id="receipt-keyword-text" style="background: #f0f0f0; padding: 8px 15px; border-radius: 20px; font-weight: bold; color: #333;">領収書</span>
+                                        <button id="copy-receipt-btn" onclick="copyReceiptKeyword()" style="background: #2c5aa0; color: white; border: none; padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.9rem;">
+                                            📋 コピー
+                                        </button>
+                                        <span id="copy-receipt-feedback" style="color: #28a745; font-size: 0.9rem; display: none;">コピーしました！</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -492,6 +499,49 @@
                 setTimeout(function() {
                     copyBtn.innerHTML = '📋 コピー';
                     feedback.style.display = 'none';
+                }, 3000);
+            });
+        }
+        
+        // 領収書キーワードコピー機能
+        function copyReceiptKeyword() {
+            const keywordText = "領収書";
+            const copyBtn = document.getElementById('copy-receipt-btn');
+            const feedback = document.getElementById('copy-receipt-feedback');
+            
+            // クリップボードにコピー
+            navigator.clipboard.writeText(keywordText).then(function() {
+                // コピー成功時の処理
+                copyBtn.style.background = '#28a745';
+                copyBtn.innerHTML = '✓ 完了';
+                feedback.style.display = 'inline';
+                
+                // 2秒後に元に戻す
+                setTimeout(function() {
+                    copyBtn.style.background = '#2c5aa0';
+                    copyBtn.innerHTML = '📋 コピー';
+                    feedback.style.display = 'none';
+                }, 2000);
+            }).catch(function(err) {
+                // エラー時の処理（古いブラウザ対応）
+                console.error('コピーに失敗しました:', err);
+                
+                // フォールバック: 選択状態にする
+                const range = document.createRange();
+                const keywordElement = document.getElementById('receipt-keyword-text');
+                range.selectNode(keywordElement);
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+                
+                copyBtn.innerHTML = '選択済み';
+                feedback.innerHTML = '手動でコピーしてください';
+                feedback.style.display = 'inline';
+                feedback.style.color = '#ff6b35';
+                
+                setTimeout(function() {
+                    copyBtn.innerHTML = '📋 コピー';
+                    feedback.style.display = 'none';
+                    feedback.style.color = '#28a745';
                 }, 3000);
             });
         }

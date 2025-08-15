@@ -1831,7 +1831,8 @@ section {
         box-shadow: 0 4px 12px rgba(0, 185, 0, 0.3);
     }
     
-    #copy-keyword-btn:hover {
+    #copy-keyword-btn:hover,
+    #copy-receipt-btn:hover {
         background: #1e3f73 !important;
         transform: translateY(-1px);
         transition: all 0.2s ease;
