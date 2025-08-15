@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initFAQAccordion();
     initBankTransferAccordion();
     initSmoothScrolling();
-    initMobileNavigation();
 });
 
 // Direct scroll functions for hero buttons
@@ -527,117 +526,7 @@ function initSmoothScrolling() {
     });
 }
 
-// Mobile navigation (hamburger menu)
-function initMobileNavigation() {
-    // Create mobile menu toggle button
-    const navContainer = document.querySelector('.nav-container');
-    const mobileToggle = document.createElement('button');
-    mobileToggle.className = 'mobile-nav-toggle';
-    mobileToggle.innerHTML = '<span></span><span></span><span></span>';
-    mobileToggle.style.cssText = `
-        display: none;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 30px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-    `;
-
-    // Add spans styling
-    const spans = mobileToggle.querySelectorAll('span');
-    spans.forEach(span => {
-        span.style.cssText = `
-            width: 25px;
-            height: 3px;
-            background: #2c5aa0;
-            transition: all 0.3s ease;
-            transform-origin: center;
-        `;
-    });
-
-    navContainer.appendChild(mobileToggle);
-
-    // Mobile menu functionality
-    const navMenu = document.querySelector('.nav-menu');
-    
-    mobileToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('mobile-open');
-        mobileToggle.classList.toggle('open');
-        
-        if (mobileToggle.classList.contains('open')) {
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-        } else {
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        }
-    });
-
-    // Show mobile toggle on small screens
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    
-    function handleMobileView(e) {
-        if (e.matches) {
-            mobileToggle.style.display = 'flex';
-            navMenu.style.cssText = `
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: rgba(255, 255, 255, 0.98);
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 50px;
-                transition: left 0.3s ease;
-                backdrop-filter: blur(10px);
-            `;
-        } else {
-            mobileToggle.style.display = 'none';
-            navMenu.style.cssText = '';
-            navMenu.classList.remove('mobile-open');
-        }
-    }
-
-    mediaQuery.addListener(handleMobileView);
-    handleMobileView(mediaQuery);
-
-    // Mobile menu open state
-    const style = document.createElement('style');
-    style.textContent = `
-        .nav-menu.mobile-open {
-            left: 0 !important;
-        }
-        
-        .nav-menu.mobile-open li {
-            margin: 20px 0;
-        }
-        
-        .nav-menu.mobile-open a {
-            font-size: 1.2rem;
-            padding: 15px 30px;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Close mobile menu when clicking links
-    const mobileNavLinks = navMenu.querySelectorAll('a');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('mobile-open');
-            mobileToggle.classList.remove('open');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        });
-    });
-}
+// Mobile navigation removed - hamburger menu functionality disabled
 
 // Parallax effect for hero section
 function initParallaxEffect() {
