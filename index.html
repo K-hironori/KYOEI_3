@@ -16,11 +16,6 @@
             <div class="nav-logo">
                 <span class="logo-text">享栄高校硬式野球部OB・OG会</span>
             </div>
-            <button class="mobile-nav-toggle" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <ul class="nav-menu">
                 <li><a href="#purpose">趣旨説明</a></li>
                 <li><a href="#usage">会費の使い道</a></li>
@@ -449,26 +444,6 @@
             }
         }
         
-        function toggleMobileMenu() {
-            var navMenu = document.querySelector('.nav-menu');
-            var mobileToggle = document.querySelector('.mobile-nav-toggle');
-            
-            navMenu.classList.toggle('mobile-open');
-            mobileToggle.classList.toggle('open');
-        }
-        
-        // Close mobile menu when clicking on links
-        document.addEventListener('DOMContentLoaded', function() {
-            var navLinks = document.querySelectorAll('.nav-menu a');
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    var navMenu = document.querySelector('.nav-menu');
-                    var mobileToggle = document.querySelector('.mobile-nav-toggle');
-                    navMenu.classList.remove('mobile-open');
-                    mobileToggle.classList.remove('open');
-                });
-            });
-        });
     </script>
 </body>
 </html>
