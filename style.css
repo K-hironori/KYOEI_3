@@ -1823,6 +1823,20 @@ section {
         opacity: 0 !important;
     }
     
+    /* LINE関連スタイル */
+    .line-add-btn:hover {
+        background: #009900 !important;
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 185, 0, 0.3);
+    }
+    
+    #copy-keyword-btn:hover {
+        background: #1e3f73 !important;
+        transform: translateY(-1px);
+        transition: all 0.2s ease;
+    }
+    
     section {
         padding: 60px 0;
     }
