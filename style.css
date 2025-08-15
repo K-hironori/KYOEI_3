@@ -1807,6 +1807,22 @@ section {
         text-overflow: unset;
     }
     
+    /* ハンバーガーメニューアイコンを非表示にする */
+    .hamburger-menu,
+    .nav-toggle,
+    .menu-icon,
+    .mobile-nav-toggle,
+    .mobile-menu-btn,
+    .hamburger,
+    .menu-toggle,
+    .navbar-toggle,
+    .nav-hamburger,
+    .mobile-toggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+    
     section {
         padding: 60px 0;
     }
@@ -2006,6 +2022,22 @@ section {
 }
 
 @media (max-width: 480px) {
+    /* ハンバーガーメニューアイコンを非表示にする（小画面用） */
+    .hamburger-menu,
+    .nav-toggle,
+    .menu-icon,
+    .mobile-nav-toggle,
+    .mobile-menu-btn,
+    .hamburger,
+    .menu-toggle,
+    .navbar-toggle,
+    .nav-hamburger,
+    .mobile-toggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+    
     .hero-main {
         font-size: 1.8rem;
     }
@@ -2204,6 +2236,22 @@ section {
 
 /* Extra Small Mobile Devices (320px and below) */
 @media (max-width: 320px) {
+    /* ハンバーガーメニューアイコンを非表示にする（極小画面用） */
+    .hamburger-menu,
+    .nav-toggle,
+    .menu-icon,
+    .mobile-nav-toggle,
+    .mobile-menu-btn,
+    .hamburger,
+    .menu-toggle,
+    .navbar-toggle,
+    .nav-hamburger,
+    .mobile-toggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+    
     .container {
         padding: 0 8px;
     }
